@@ -24,7 +24,7 @@ def convert(filename):
     filenametosave = str(filename).split('.')[0] + ".png"
     blobpath = azureblob.save_image_bytes(filenametosave, png_image_binary_str)
 
-    return true
+    return True
 
 if __name__ == "__main__":
     convert()
