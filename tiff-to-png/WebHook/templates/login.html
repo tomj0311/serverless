@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name = "viewport" content = "user-scalable=yes, width=device-width /">
+
+<meta name="keywords" content="RM Assessor, E marking, RM Results, Integrated e-Assessment, Mark by candidate, Seeding">
+<meta name="description" content="RM Assessor, the world's most widely used and innovative high stakes e-marking platform">
+
+<meta charset="utf-8">
+
+<title>{{ title }} - RM Assessor - innovative e-marking platform</title>
+
+<link rel="stylesheet" href="/static/css/main.css">
+<script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/js/less.min.js"></script>
+<script type="text/javascript" src="/static/js/utility.js"></script>
+<script type="text/javascript" src="/static/js/poc.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+        <div class="page-wrapper">
+            <div class="login-wrapper">
+                <header class="fixed">
+                    <div class="wrapper clearfix">
+                    	<div class="breadcrumb-holder">
+                        	<ul class="breadcrumb">
+                                <li class="breadcrumb-item dropdown-wrap header-dropdown">
+                                    <!--<a href="#" class="sprite-icon assessor-logo"></a>-->
+                                    <div class="logo-holder"> <span class="logo-t">RM Assessor AI</span> </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="nav shift-right" role="menubar">
+                            <!--<li role="menuitem">
+                                <a href="#" title="Bookmark">
+                                    <span class="sprite-icon star-icon"></span>
+                                    <span class="nav-text">Bookmark</span>
+                                </a>
+                            </li>-->
+                            <!--<li role="menuitem">
+                                <a href="#" title="Contact">                        
+                                    <span class="nav-text">Contact</span>
+                                </a>
+                            </li>-->
+                            <li class="dropdown-wrap" role="menuitem" aria-haspopup="true">                    	
+                                <a href="#" title="Select language" class="menu-button">
+                                    <span class="nav-text">EN - UK </span>
+                                    <span class="sprite-icon menu-arrow-icon lite"></span>
+                                </a>
+                                <ul class="menu" role="menu" title="Languages" aria-hidden="true" >
+                                    <li role="menuitem"><a href="#">EN - US</a></li>
+                                    <li role="menuitem"><a href="#">ES - VE</a></li>
+                                </ul>                            
+                            </li>                
+                        </ul>
+                        
+                    </div>
+                    <div class="blue-strip"></div>
+                </header>
+                <!--header End here-->
+                
+                <div class="vertical-middle content-wrapper">
+                    <div class="middle-content relative">
+                        <div class="wrapper">
+                            <div class="col-wrap responsive-medium">
+                                <div class="col-1-of-2">
+                                    <section class="login-area">
+<!--                                        <div class="client-logo text-center"><img src="content/images/customer/rm-logo.png" alt="Cambridge Assessment" /></div>-->
+                                        <div class="login-form-holder" id="loginFormDemo">
+                                            <div class="relative">
+                                            	<!--<div class="info-messages">
+                                                    <div class="show info-alert text-center">You have bees dfs ffsd fsdf sfdfn logged out due to a period of inactivity</div>
+                                                 </div>-->
+												 <h3 class="text-center">Login to</h3> 
+                                                <div class="relative">
+                                                    <input type="text" class="text-underline" required tabindex="1" id="usernameBox" />
+                                                    <label>Username</label>
+                                                    <span class="sprite-icon username-icon"></span>
+                                                     <span class="bar"></span>
+                                                </div>
+                                                <div class="relative">
+                                                    <input type="password" aria-describedby="password-tip" class="text-underline" required tabindex="2" id="passwordBox" /> <!--Add class 'bubble-on' to show enable cablock bubble-->
+                                                    <label>Password</label>                                        
+                                                    <span class="sprite-icon password-icon"></span>
+                                                    <span class="bar"></span>
+                                                    
+                                                    <span class="bubble callout capslock-on info-alert">
+                                                        <span class="info-icon small"></span>
+                                                        <span class="bubble-text" id="password-tip">Caps lock is on</span>
+                                                    </span>
+                                                 </div>
+                                                 <div class="error-messages">
+                                                    <!--<div class="bubble show error-alert simple-alert text-center show">The username or password that you've entered is incorrect. Please tryagain</div>-->
+                                                 </div>
+                                                 </div>
+                                             </div>
+                                             
+                                            <div class="login-button-holder">
+                                                <button onclick="location.href='/automark';" class="primary rounded" title="marking" tabindex="3" id="markingButtonDemo"  />
+                                                <span class="loader text-middle">
+                                                    <span class="dot"></span>
+                                                    <span class="dot"></span>
+                                                    <span class="dot"></span>
+                                                </span>
+                                                MARKING                                         
+                                                
+                                                
+                                                </button>
+<!--
+                                                <h5 class="text-center">OR</h5>
+                                                <button class="rounded" title="Familiarisation" tabindex="4">FAMILIARISATION</button>
+-->
+                                            </div> 
+                                        </div>
+                                    </section>                    
+                                </div>
+                                <div class="col-1-of-2">
+                                    <div class="slider-holder">
+                                        <div class="client-logo text-left"><img src="/static/images/customer/robot.jpg" alt="AI" /></div>
+                                        <div class="horizontal-carousel-container">
+                                            <div class="horizontal-carousel-inner">
+                                              <div class="horizontal-carousel-mask"> 
+                                                <div class="horizontal-carousel-wrap">
+                                                  <div class="horizontal-slide active text-centre" id="slide0">
+                                                    <h3>Welcome to RM Assessor</h3>
+                                                    <p>The world's most widely used and innovative high stakes e&#8209;marking platform</p>
+                                                  </div>
+                                                  <!--<div class="horizontal-slide hide text-centre" id="slide1">
+                                                    <h3>Slide 2 title</h3>
+                                                    <p>160 million exam pages were scanned and marked via our onscreen marking system in 2014.</p>
+                                                  </div>
+                                                  <div class="horizontal-slide hide text-centre" id="slide2">
+                                                    <h3>High stakes, high expectations</h3>
+                                                    <p>160 million exam pages were scanned and marked via our onscreen marking system in 2014.</p>
+                                                  </div>  -->                                   
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Middle portion End here-->
+                
+                <footer class="footer">
+                    <div class="wrapper clearfix">
+                        <div class="col-wrap responsive-medium">
+                            <div class="col-1-of-2">
+                                <div class="copyright">© RM Results, All Rights Reserved</div>
+                            </div>
+                            <div class="col-1-of-2">
+                                <div class="footer-links">
+                                    <a href="#" title="System requirements">System requirements</a> | <a href="#" title="Terms of use">Terms of use</a>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </footer>
+                <!--Footer End here-->
+                <div class="cookie-wrapper">
+            <div class="short-msg">
+            	<div class="wrapper">
+                    <p class="cookies-msg">We use cookies to help us make this website work better for you. Full details of what cookies are, why use them and how you can manage them can be found by reading our <a href="#" class="show-cookie-page">Cookies</a> page. Please note that by counting to use this site you are consenting to the use of cookies.</p>
+                    <div class="cookies-msg-dont-show">
+                        <input type="checkbox" id="dont-show-cookie-msg" class="text-middle checkbox light">
+                		<label for="dont-show-cookie-msg" class="text-middle">Don't show this message again</label>    
+                    </div>
+                    <button class="button rounded hide-cookie-msg" title="Close">Close</button>
+                </div>
+            </div>
+            <div class="cookie-page exp-msg">
+            <a href="#" class="close-cookie-page" title="Close"><span class="sprite-icon close-large-icon">Close</span></a>
+            <div class="wrapper">
+            	<h2>What are cookies?</h2>
+            	<p>Cookies are small text files which are sent to and then stored on your computer when you visit different web pages. We do not store detailed personal information in our cookies, but we use information gathered from cookies to help make your experience on the site better, e.g. by making navigation within the site easier or remembering  your preferences. Please note that cookies can't harm your computer or your files.</p>
+
+<p>Cookies are either “session cookies”, which are only stored for the duration of your visit to the site and deleted when you close your browser, or “persistent cookies”, which are stored for a period of time and activated when you return to the site. In general,session cookies are often used  for authentication, and persistant cookies are often used to save your preferences.</p>
+		<h2>Cookies on this site</h2>
+        <p>In order for this site to work properly your computer needs to accept a number of cookies; without them some fundamental parts of the website won't work as intended.		</p><p>The cookies used on this site include:</p>
+            <div>
+            <table>
+             <tbody>
+                <tr>
+                <th>Name</th>
+                <th>Type (session or persistent)</th><th>Purpose</th>
+                </tr>
+                <tr>
+                <td>ASP.NET_SessionId</td><td>session</td><td>ASP.NET session cookie</td></tr><tr><td>cookiesDisclosureCount</td><td>persistent</td><td>Remembering whether cookie policy is shown</td></tr><tr><td>Oob</td><td>persistent</td><td>For supporting Out of browser</td></tr></tbody></table>
+            </div> 
+        <h2>How to manage cookies</h2>
+        <h3>To check cookies are enabled on a PC:</h3>
+        <div><h4>Microsoft Internet Explorer 7+:</h4>
+			<ol>
+				<li> On the menu bar at the top of your browser window, click 'Tools', select 'Internet Options', then click on the privacy tab.</li>
+				<li> Set the privacy level to 'Medium' or below; this will enable cookies in your browser.</li>				
+			</ol>
+			
+			<h4>Google Chrome:</h4>
+			<ol>
+				<li> At the top of your browser window click on the button to the right of the address bar and select 'Settings'.</li>
+				<li> Click 'Show advanced settings' and then click on the 'Content settings...' button.</li>
+				<li> Choose 'Allow local data to be set (recommended)'.</li>
+			</ol> 
+			
+			<h4>Mozilla Firefox:</h4>
+			<ol>
+				<li> At the top of your browser window click on the cog icon,and select 'Preferences'.</li>
+				<li> Click on the 'Privacy' icon.</li>
+				<li> Ensure that 'Remember history' is selected.</li>
+			</ol>
+			
+			<h4>Safari:</h4>
+			<ol>
+				<li> At the top of your browser window click on the cog icon, and select 'Preferences'.</li>
+				<li> Click on the 'Privacy' icon.</li>
+				<li> Ensure 'From third parties and advertisers' or 'Never' is selected for 'Block cookies' .</li>
+			</ol></div>
+            <h3>To check cookies are enabled on a Mac:</h3>
+            <div>		
+			<h4>Safari:</h4>
+			<ol>
+				<li> At the top of your browser window click on 'Safari' and select 'Preferences'.</li>
+				<li> Click on the 'Privacy' icon.</li>
+				<li> Ensure 'From third parties and advertisers' or 'Never' is selected for 'Block cookies' .</li>
+			</ol> 
+			
+			<h4>Google Chrome:</h4>
+			<ol>
+				<li> At the top of your browser window click on the button to the right of the address bar and select 'Settings'.</li>
+				<li> Click 'Show advanced settings' and then click on the 'Content settings...' button.</li>
+				<li> Choose 'Allow local data to be set (recommended)'.</li>
+			</ol>
+			
+			<h4>Mozilla Firefox:</h4>
+			<ol>
+				<li> At the top of your browser click on 'Firefox' and select 'Options'.</li>
+				<li> Click on the 'Privacy' icon.</li>
+				<li> Ensure that 'Remember history' is selected.</li>				
+			</ol></div>
+            <p>For all other browsers please see the individual browser's documentation or online help files.</p>
+                                                                                                                                        
+            </div>
+            </div>
+        </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
