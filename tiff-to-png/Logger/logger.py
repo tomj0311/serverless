@@ -1,28 +1,22 @@
-import logging
+from applicationinsights import TelemetryClient
 
 
 class Logger:
     def __init__(self):
-        logging.basicConfig(
-            level=logging.WARNING,
-            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-            filename='service.log')
+        tc = TelemetryClient('ec8d6f29-4b41-4c17-b64e-7d6201100d32')
+        tc.channel.sender.send_interval_in_milliseconds = 30 * 1000
+        tc.context.application.ver = '1.0.0'
 
-        self._logger = logging.getLogger()
+        self._logger = tc
+        self.log_debug('Application started')
 
-    def log_exception(self, exception):
-        self._logger.exception(exception)
+    def log_exception(self, exception, props=None):
+        self._logger.track_exception(value=exception, properties=props)
+        self._logger.flush()
 
-    def log_error(self, message):
-        self._logger.error(message)
+    def log_event(self, message, props=None):
+        self._logger.track_event(message, properties=props)
 
-    def log_warning(self, message):
-        self._logger.warning(message)
-
-    def log_debug(self, message):
-        self._logger.debug(message)
-
-    def log_info(self, message):
-        self._logger.info(message)
-
-
+    def log_debug(self, message, props=None):
+        self._logger.track_trace(message, properties=props, severity='DEBUG')
+        self._logger.flush()
