@@ -8,6 +8,7 @@ sys.path.append(lib_path)
 from Azure import blob
 from Logger import logger
 
+
 class Convert(object):
     def __init__(self, logger):
         self.logger = logger.Logger()

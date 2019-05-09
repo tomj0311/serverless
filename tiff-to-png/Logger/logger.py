@@ -8,14 +8,13 @@ class Logger:
         tc.context.application.ver = '1.0.0'
 
         self._logger = tc
-        self.log_debug('Application started')
 
     def log_exception(self, exception, props=None):
         self._logger.track_exception(value=exception, properties=props)
-        self._logger.flush()
 
     def log_event(self, message, props=None):
         self._logger.track_event(message, properties=props)
+        self._logger.flush()
 
     def log_debug(self, message, props=None):
         self._logger.track_trace(message, properties=props, severity='DEBUG')
