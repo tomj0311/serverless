@@ -2,9 +2,9 @@ IMAGE_PATH = "images"
 
 BLOBS = {
     'slimageutils':  {
-        'account_name': 'tifftopngstorage',
+        'account_name': 'GG',
         'container_name': 'images',
-        'key': '9rhwC5nhOseznKFc8HMbhRIyFsZatyiDFP9NOC1kf4jWbjM/eVo1kPm73YPtCAftdE7oKdpgVYS1mnumAQLgGg==',
+        'key': 'GG',
         'retries': 3,
         'retry_in_seconds': 5,
     },

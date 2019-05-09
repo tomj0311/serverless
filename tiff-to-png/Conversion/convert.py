@@ -10,7 +10,7 @@ from Logger import logger
 
 
 class Convert(object):
-    def __init__(self, logger):
+    def __init__(self):
         self.logger = logger.Logger()
 
     def encode_ndarray(self, ndarray):
@@ -19,12 +19,11 @@ class Convert(object):
 
     def convert(self, event):
 
-        azureblob = blob.Blob()
-
         try:
             event_data = event['data']
             filename = event_data['key']
 
+            azureblob = blob.Blob('images')
             image_binary_string = azureblob.get_image_bytes(filename)
             image_array = np.fromstring(image_binary_string, dtype='uint8')
             image_ndarray = cv2.imdecode(image_array, cv2.IMREAD_UNCHANGED)
@@ -37,10 +36,11 @@ class Convert(object):
 
         except Exception as ex:
             self.logger.log_exception(Exception)
+            azureblob = blob.Blob('deadletters')
+            azureblob.save_json(event['id'] + '.json', event)
 
         finally:
-            azureblob.save_json(event['id'] + '.json', event)
-            self.logger.log_debug("Event failed!", props=event)
+            return true
 
 if __name__ == "__main__":
     c = Convert()

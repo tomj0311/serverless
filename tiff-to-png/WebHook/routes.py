@@ -50,7 +50,7 @@ def trigger():
                 return jsonify(answer_payload)
 
             elif event['eventType'] == "CustomEventType":
-                c = convert.Convert(_logger)
+                c = convert.Convert()
                 t = Thread(target=c.convert, args=(event,))
                 t.start()
 
