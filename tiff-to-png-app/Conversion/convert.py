@@ -8,6 +8,7 @@ sys.path.append(lib_path)
 
 from Azure import blob
 from Logger import logger
+from uuid import uuid4
 
 
 class Convert(object):
@@ -19,7 +20,6 @@ class Convert(object):
         return buffer
 
     def convert(self, event):
-
         try:
             event_data = event['data']
             filename = event_data['key']
@@ -30,22 +30,26 @@ class Convert(object):
             image_ndarray = cv2.imdecode(image_array, cv2.IMREAD_UNCHANGED)
             png_image_binary_str = self.encode_ndarray(image_ndarray).tostring()
 
-            filenametosave = str(filename).split('.')[0] + ".png"
+            # str(filename).split('.')[0]
+            filenametosave = 'converted/' + str(uuid4()) + '.png'
             blobpath = azureblob.save_image_bytes(filenametosave,
                                                   png_image_binary_str)
 
             self.logger.log_debug("Converted " + filename)
 
-            return true
+            return True
 
         except Exception as ex:
-            self.logger.log_exception(Exception, props=event)
+            self.logger.log_exception(ex)
 
             azureblob = blob.Blob('deadletters')
             azureblob.save_json(event['id'] + '.json', json.dumps(event))
 
+        else:
             return False
+
 
 if __name__ == "__main__":
     c = Convert()
     c.convert('101-14198-04-04AX02.tif')
+

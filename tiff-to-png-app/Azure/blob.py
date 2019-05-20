@@ -3,7 +3,7 @@ from Azure import config
 
 
 class Blob:
-    def __init__(self, container_name):
+    def __init__(self, container_name=None):
         self.config = config.BLOBS['slimageutils']
         self.account_key = self.config['key']
         self.account_name = self.config['account_name']

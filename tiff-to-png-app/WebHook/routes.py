@@ -28,6 +28,7 @@ def trigger():
     try:
 
         event_request = request.get_json()
+        event_response = None
 
         for event in event_request:
             event_data = event['data']
@@ -47,15 +48,16 @@ def trigger():
                     "validationResponse": validation_code
                 }
 
-                return jsonify(answer_payload)
+                event_response = answer_payload
 
             elif event['eventType'] == "CustomEventType":
                 c = convert.Convert()
-                t = Thread(target=c.convert, args=(event,))
-                t.start()
+                c.convert(event)
+
+                event_response = "Ok"
 
     except Exception as ex:
         _logger.log_exception(ex)
 
-    finally:
-        return "Ok"
+    else:
+        return jsonify(event_response)
