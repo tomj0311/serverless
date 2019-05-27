@@ -52,4 +52,3 @@ class Convert(object):
 if __name__ == "__main__":
     c = Convert()
     c.convert('101-14198-04-04AX02.tif')
-

@@ -8,6 +8,10 @@ from azure.eventgrid.models import EventGridEvent
 from threading import Thread
 import time
 
+import multiprocessing
+
+workers = multiprocessing.cpu_count() * 2 + 1
+
 TOPIC_ENDPOINT = "tiff-to-png-topic.southeastasia-1.eventgrid.azure.net"
 
 EVENT_GRID_KEY = 'H1G0d9RiDsmYto3hr/bngu6oJuOzhpEYWUWV/9fLtOw='
@@ -53,6 +57,7 @@ def run():
             # send_event(filename, event_grid_client)
             t = Thread(target=send_event, args=(filename, event_grid_client,))
             t.start()
+            # time.sleep(0.100)
 
     print("Published events to Event Grid.")
 
